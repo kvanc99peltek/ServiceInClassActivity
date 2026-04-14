@@ -7,6 +7,8 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.IBinder
 import android.os.Looper
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -48,6 +50,30 @@ class MainActivity : AppCompatActivity() {
                 timerBinder.stop()
                 findViewById<TextView>(R.id.textView).text = "0"
             }
+        }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.main_menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.action_start -> {
+                if (isBound) {
+                    timerBinder.start(10)
+                }
+                true
+            }
+            R.id.action_stop -> {
+                if (isBound) {
+                    timerBinder.stop()
+                    findViewById<TextView>(R.id.textView).text = "0"
+                }
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
         }
     }
 
