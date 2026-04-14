@@ -10,7 +10,7 @@
 
     <item
         android:id="@+id/action_stop"
-        android:icon="@android:drawable/ic_media_pause"
+        android:icon="@drawable/ic_stop"
         android:title="Stop"
         app:showAsAction="ifRoom" />
 
