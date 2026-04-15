@@ -9,6 +9,12 @@
         app:showAsAction="ifRoom" />
 
     <item
+        android:id="@+id/action_pause"
+        android:icon="@android:drawable/ic_media_pause"
+        android:title="Pause"
+        app:showAsAction="ifRoom" />
+
+    <item
         android:id="@+id/action_stop"
         android:icon="@drawable/ic_stop"
         android:title="Stop"
